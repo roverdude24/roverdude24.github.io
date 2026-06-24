@@ -15,3 +15,11 @@ package-lock.json
 
 # Open Design local data
 .od/
+
+# Source materials (not for deployment)
+LAM VINH - Director's Bio - 2026/
+LAM VINH - Director's Bio - 2026.zip
+REF/
+*.bak
+fff1ff16-*.mp4
+PROJECT-STATE.md
