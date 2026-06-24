@@ -78,7 +78,6 @@ Built from:
 - LinkedIn profile ([linkedin.com/in/vinhwalter](https://linkedin.com/in/vinhwalter))
 - Director's Bio PDF (2026)
 - Notion AI Creator Hub & VINHLAM personal AI Agent pages
-- Reference: [linhkid.github.io](https://linhkid.github.io/) layout structure
 
 ## Tech
 
