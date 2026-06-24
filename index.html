@@ -585,46 +585,241 @@
     animation: slideInRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
   }
 
-  /* RESPONSIVE STACKING FOR MOBILE PORTS */
-  @media (max-width: 900px) {
+  /* Hamburger Menu Button (hidden on desktop) */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    box-sizing: content-box;
+    z-index: 101;
+  }
+  .hamburger-menu .bar {
+    width: 30px;
+    height: 2px;
+    background-color: var(--text-dark);
+    transition: all 0.3s ease;
+    display: block;
+  }
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Mobile Menu Overlay (hidden on desktop) */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-main);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .mobile-menu-nav-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-gray);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding: 12px 24px;
+    display: block;
+    text-align: center;
+    min-height: 44px;
+  }
+  .mobile-menu-nav-link:hover,
+  .mobile-menu-nav-link.active {
+    color: var(--primary-red);
+  }
+  .mobile-menu-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .mobile-menu-contact-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .mobile-menu-contact-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 12px 24px;
+    display: block;
+    text-align: center;
+    min-height: 44px;
+  }
+  .mobile-menu-contact-link:hover {
+    color: var(--text-dark);
+  }
+
+  /* ==========================================================================
+     RESPONSIVE STYLES (MOBILE-FIRST / DESKTOP-FIRST OVERRIDES)
+     ========================================================================== */
+
+  /* 1. LAPTOP BREAKPOINT (1024px - 1440px) */
+  @media (min-width: 1024.1px) and (max-width: 1440px) {
+    .sidebar {
+      width: 240px;
+      min-width: 240px;
+      padding: 32px 24px;
+    }
+    .panel-left, .panel-right {
+      padding: 32px;
+    }
+    .panel-inner {
+      padding: 20px;
+    }
+    .view-heading {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .showreel-layout {
+      padding: 32px;
+    }
+    .video-wrapper {
+      max-width: 640px;
+    }
+  }
+
+  /* 2. TABLET BREAKPOINT (768px - 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
     body {
       flex-direction: column;
+      overflow-x: hidden;
       overflow-y: auto;
       height: auto;
+      width: 100%;
     }
-
     .sidebar {
       width: 100%;
+      min-width: unset;
       height: auto;
-      padding: 36px 24px;
       border-right: none;
       border-bottom: 1px solid var(--border-color);
+      padding: 24px 32px;
+      flex-direction: column;
+      align-items: center;
     }
-
+    .sidebar-top {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      align-items: center;
+      justify-content: center;
+      column-gap: 20px;
+      row-gap: 4px;
+      width: auto;
+      margin: 0 auto;
+    }
+    .profile-container {
+      grid-row: 1 / 3;
+      grid-column: 1;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 0;
+    }
+    .sidebar .name {
+      grid-row: 1;
+      grid-column: 2;
+      text-align: left;
+      margin-top: 0;
+      font-size: 28px;
+    }
+    .sidebar .title {
+      grid-row: 2;
+      grid-column: 2;
+      text-align: left;
+      margin-top: 0;
+    }
+    .sidebar .divider {
+      display: none;
+    }
     .sidebar-contact-info {
-      max-width: 320px;
-      margin: 16px auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+      width: 100%;
     }
-
+    .sidebar-contact-label {
+      width: 100%;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .contact-link {
+      margin: 0;
+    }
+    .sidebar-nav {
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      width: 100%;
+    }
+    .sidebar-nav-link {
+      margin: 0;
+      padding: 8px 16px;
+      border-bottom: 2px solid transparent;
+    }
+    .sidebar-nav-link.active {
+      border-bottom-color: var(--primary-red);
+    }
+    .sidebar-footer {
+      display: none;
+    }
     .content-area {
       width: 100%;
       height: auto;
       overflow: visible;
     }
-
-
-
-    .sidebar-nav {
-      max-width: 320px;
-      margin: 16px auto;
-    }
-
     .views-container {
       height: auto;
-      min-height: calc(100vh - 200px);
       overflow: visible;
     }
-
     .view-panel {
       position: relative;
       top: auto;
@@ -635,42 +830,39 @@
       opacity: 0;
       transform: none;
     }
-
     .view-panel.active {
       display: flex;
       opacity: 1;
     }
-
     .split-layout {
-    align-items: flex-start;
       grid-template-columns: 1fr;
       height: auto;
     }
-
     .panel-left, .panel-right {
       height: auto;
-      padding: 32px 24px;
+      padding: 32px;
       border-right: none;
     }
-
     .panel-left {
       border-bottom: 1px solid var(--border-color);
     }
-
     .panel-inner {
       padding: 16px 0;
     }
-
     .panel-inner.scrollable {
       overflow-y: visible;
       padding-right: 0;
     }
-
     .showreel-layout {
       height: auto;
-      padding: 32px 24px;
+      padding: 32px;
     }
-
+    .video-wrapper {
+      max-width: 100%;
+    }
+    .view-heading {
+      font-size: 36px;
+    }
     .view-panel.active .panel-left,
     .view-panel.active .panel-right {
       animation: none;
@@ -678,22 +870,145 @@
     }
   }
 
-  @media (max-width: 500px) {
+  /* 3. MOBILE BREAKPOINT (under 768px) */
+  @media (max-width: 767.9px) {
+    body {
+      flex-direction: column;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: auto;
+      width: 100%;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      min-width: unset;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-sidebar);
+      z-index: 100;
+    }
+    .sidebar-top {
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      width: auto;
+    }
+    .profile-container {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0;
+    }
+    .sidebar .name {
+      font-size: 20px;
+      margin-top: 0;
+      margin-left: 0;
+    }
+    .sidebar .title,
+    .sidebar .divider,
+    .sidebar-contact-info,
+    .sidebar-nav,
+    .sidebar-footer {
+      display: none;
+    }
+    .hamburger-menu {
+      display: flex;
+    }
+    .content-area {
+      width: 100%;
+      height: auto;
+      padding-top: 60px;
+      overflow: visible;
+    }
+    .views-container {
+      height: auto;
+      overflow: visible;
+    }
+    .view-panel {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      display: none;
+      opacity: 0;
+      transform: none;
+    }
+    .view-panel.active {
+      display: flex;
+      opacity: 1;
+    }
+    .split-layout {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    .panel-left, .panel-right {
+      height: auto;
+      padding: 24px 16px;
+      border-right: none;
+    }
+    .panel-left {
+      border-bottom: 1px solid var(--border-color);
+    }
+    .panel-inner {
+      padding: 12px 0;
+    }
+    .panel-inner.scrollable {
+      overflow-y: visible;
+      padding-right: 0;
+    }
+    .showreel-layout {
+      height: auto;
+      padding: 24px 16px;
+    }
+    .video-wrapper {
+      width: 100%;
+      max-width: 100%;
+    }
+    .view-heading {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .about-text, .exp-desc, .exp-role, .contact-link {
+      font-size: 14px;
+    }
+    .showreel-text-link {
+      padding: 12px 0;
+      display: inline-block;
+      min-height: 44px;
+    }
+    .cta-btn-outline {
+      min-height: 44px;
+      padding: 12px 24px;
+      display: inline-flex;
+      align-items: center;
+    }
     .trusted-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
-
     .grid-logo-item {
       height: 70px;
-      padding: 16px;
+      padding: 12px;
     }
-
-    .view-heading {
-      font-size: 42px;
+    .view-panel.active .panel-left,
+    .view-panel.active .panel-right {
+      animation: none;
+      opacity: 1;
     }
+  }
 
-
+  @media (min-width: 480px) and (max-width: 767.9px) {
+    .trusted-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>
 </head>
@@ -709,6 +1024,13 @@
     <div class="title">Film Director<br>Visual Artist</div>
     <div class="divider"></div>
   </div>
+
+  <!-- Hamburger Menu Button (visible on mobile only) -->
+  <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
 
   <div class="sidebar-contact-info">
     <div class="sidebar-contact-label">CONTACT</div>
@@ -729,6 +1051,24 @@
     © 2026 Lâm Vinh
   </div>
 </aside>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay">
+  <nav class="mobile-menu-nav">
+    <a href="#" id="mobile-nav-about" class="mobile-menu-nav-link active" onclick="switchView('about'); return false;">ABOUT</a>
+    <a href="#" id="mobile-nav-showreel" class="mobile-menu-nav-link" onclick="switchView('showreel'); return false;">SHOWREEL</a>
+    <a href="#" id="mobile-nav-brands" class="mobile-menu-nav-link" onclick="switchView('brands'); return false;">BRANDS</a>
+  </nav>
+  <div class="mobile-menu-contact">
+    <div class="mobile-menu-contact-label">CONTACT</div>
+    <a href="mailto:vinh.walter@gmail.com" class="mobile-menu-contact-link">vinh.walter@gmail.com</a>
+    <a href="https://instagram.com/vinhiam" target="_blank" class="mobile-menu-contact-link">@vinhiam</a>
+    <a href="https://vimeo.com/vinhwalter" target="_blank" class="mobile-menu-contact-link">Vimeo</a>
+    <a href="https://linkedin.com/in/vinhwalter" target="_blank" class="mobile-menu-contact-link">LinkedIn</a>
+    <a href="https://vinhlam.com" class="mobile-menu-contact-link" target="_blank">vinhlam.com</a>
+  </div>
+</div>
+
 
 <!-- MAIN CONTENT AREA -->
 <main class="content-area">
@@ -864,6 +1204,20 @@
 </main>
 
 <script>
+  function toggleMobileMenu() {
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    const hamburger = document.querySelector('.hamburger-menu');
+    overlay.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (overlay.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
   function switchView(viewId) {
     // 1. Switch View Panel Active Classes
     const panels = document.querySelectorAll('.view-panel');
@@ -877,7 +1231,7 @@
     }
     
     // 2. Switch Nav Link Active Classes
-    const navLinks = document.querySelectorAll('.sidebar-nav-link');
+    const navLinks = document.querySelectorAll('.sidebar-nav-link, .mobile-menu-nav-link');
     navLinks.forEach(link => {
       link.classList.remove('active');
     });
@@ -886,13 +1240,25 @@
     if (activeLink) {
       activeLink.classList.add('active');
     }
-    
 
+    const activeMobileLink = document.getElementById('mobile-nav-' + viewId);
+    if (activeMobileLink) {
+      activeMobileLink.classList.add('active');
+    }
     
-    // 4. Pause Video if moving away from showreel
+    // 3. Pause Video if moving away from showreel
     const video = document.querySelector('.showreel-video');
     if (video && viewId !== 'showreel') {
       video.pause();
+    }
+
+    // 4. Close mobile menu if open
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    const hamburger = document.querySelector('.hamburger-menu');
+    if (overlay && overlay.classList.contains('active')) {
+      overlay.classList.remove('active');
+      hamburger.classList.remove('active');
+      document.body.style.overflow = '';
     }
   }
 </script>
