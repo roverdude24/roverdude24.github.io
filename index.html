@@ -230,6 +230,11 @@
     font-weight: 700;
   }
 
+  .contact-dropdown-container {
+    display: none;
+    position: relative;
+  }
+
   /* VIEWS PANELS */
   .views-container {
     flex-grow: 1;
@@ -778,20 +783,60 @@
       display: none;
     }
     .sidebar-contact-info {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 16px;
-      width: 100%;
+      display: none;
     }
-    .sidebar-contact-label {
-      width: 100%;
-      margin-bottom: 0;
-      text-align: center;
+    .contact-dropdown-container {
+      display: inline-block;
+      position: relative;
     }
-    .contact-link {
+    .contact-dropdown-btn {
+      display: block;
+      padding: 8px 16px;
+      border-bottom: 2px solid transparent;
       margin: 0;
+    }
+    .contact-dropdown-btn.active {
+      border-bottom-color: var(--primary-red);
+      color: var(--primary-red);
+    }
+    .contact-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background-color: var(--bg-main);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 16px;
+      z-index: 100;
+      min-width: 200px;
+      text-align: center;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .contact-dropdown-menu.active {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .contact-dropdown-menu .dropdown-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: var(--text-gray);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+      display: block;
+      padding: 4px 0;
+    }
+    .contact-dropdown-menu .dropdown-link:hover {
+      color: var(--primary-red);
     }
     .sidebar-nav {
       flex-direction: row;
@@ -829,6 +874,7 @@
       display: none;
       opacity: 0;
       transform: none;
+      flex-direction: column;
     }
     .view-panel.active {
       display: flex;
@@ -915,7 +961,8 @@
     .sidebar .divider,
     .sidebar-contact-info,
     .sidebar-nav,
-    .sidebar-footer {
+    .sidebar-footer,
+    .contact-dropdown-container {
       display: none;
     }
     .hamburger-menu {
@@ -940,6 +987,7 @@
       display: none;
       opacity: 0;
       transform: none;
+      flex-direction: column;
     }
     .view-panel.active {
       display: flex;
@@ -1045,6 +1093,16 @@
     <a href="#" id="sidebar-nav-about" class="sidebar-nav-link active" onclick="switchView('about'); return false;">ABOUT</a>
     <a href="#" id="sidebar-nav-showreel" class="sidebar-nav-link" onclick="switchView('showreel'); return false;">SHOWREEL</a>
     <a href="#" id="sidebar-nav-brands" class="sidebar-nav-link" onclick="switchView('brands'); return false;">BRANDS</a>
+    <div class="contact-dropdown-container">
+      <a href="#" id="sidebar-nav-contact" class="sidebar-nav-link contact-dropdown-btn" onclick="toggleContactDropdown(event); return false;">CONTACT</a>
+      <div class="contact-dropdown-menu">
+        <a href="mailto:vinh.walter@gmail.com" class="dropdown-link">vinh.walter@gmail.com</a>
+        <a href="https://instagram.com/vinhiam" target="_blank" class="dropdown-link">@vinhiam</a>
+        <a href="https://vimeo.com/vinhwalter" target="_blank" class="dropdown-link">Vimeo</a>
+        <a href="https://linkedin.com/in/vinhwalter" target="_blank" class="dropdown-link">LinkedIn</a>
+        <a href="https://vinhlam.com" target="_blank" class="dropdown-link">vinhlam.com</a>
+      </div>
+    </div>
   </div>
 
   <div class="sidebar-footer">
@@ -1218,6 +1276,26 @@
     }
   }
 
+  function toggleContactDropdown(event) {
+    if (event) event.stopPropagation();
+    const dropdown = document.querySelector('.contact-dropdown-menu');
+    const btn = document.querySelector('.contact-dropdown-btn');
+    if (dropdown) dropdown.classList.toggle('active');
+    if (btn) btn.classList.toggle('active');
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(event) {
+    const dropdown = document.querySelector('.contact-dropdown-menu');
+    const btn = document.querySelector('.contact-dropdown-btn');
+    if (dropdown && dropdown.classList.contains('active')) {
+      if (!dropdown.contains(event.target) && event.target !== btn) {
+        dropdown.classList.remove('active');
+        if (btn) btn.classList.remove('active');
+      }
+    }
+  });
+
   function switchView(viewId) {
     // 1. Switch View Panel Active Classes
     const panels = document.querySelectorAll('.view-panel');
@@ -1259,6 +1337,14 @@
       overlay.classList.remove('active');
       hamburger.classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    // 5. Close contact dropdown if open
+    const dropdown = document.querySelector('.contact-dropdown-menu');
+    const btn = document.querySelector('.contact-dropdown-btn');
+    if (dropdown && dropdown.classList.contains('active')) {
+      dropdown.classList.remove('active');
+      if (btn) btn.classList.remove('active');
     }
   }
 </script>
