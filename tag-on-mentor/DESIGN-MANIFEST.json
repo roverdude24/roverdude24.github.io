@@ -1,0 +1,308 @@
+{
+  "schema": "open-design.design-manifest.v1",
+  "title": "dd043bf9-ee82-4b16-8bc7-b71915903f6b",
+  "entryFile": "tag-along-curriculum.html",
+  "sourceFiles": {
+    "all": [
+      "assets/portfolio/comm-01.jpg",
+      "assets/portfolio/comm-02.jpg",
+      "assets/portfolio/cover-01.jpg",
+      "assets/portfolio/cover-02.jpg",
+      "assets/portfolio/cover-03.jpg",
+      "assets/portfolio/cover-04.jpg",
+      "assets/portfolio/hand-01.jpg",
+      "assets/portfolio/look-01.jpg",
+      "assets/portfolio/look-02.jpg",
+      "assets/portfolio/motion-01.jpg",
+      "assets/portfolio/motion-02.jpg",
+      "assets/portfolio/new-comm-03.jpg",
+      "assets/portfolio/new-comm-04.jpg",
+      "assets/portfolio/new-comm-05.jpg",
+      "assets/portfolio/new-hero-01.jpg",
+      "assets/portfolio/new-hero-02.jpg",
+      "assets/portfolio/new-hero-03.jpg",
+      "assets/portfolio/new-look-03.jpg",
+      "assets/portfolio/new-look-04.jpg",
+      "assets/portfolio/new-look-05.jpg",
+      "assets/portfolio/new-motion-03.jpg",
+      "assets/portfolio/new-motion-04.jpg",
+      "assets/portfolio/new-project-03.jpg",
+      "assets/portfolio/new-project-04.jpg",
+      "assets/portfolio/new-project-05.jpg",
+      "assets/portfolio/new-project-06.jpg",
+      "assets/portfolio/new-shot-04.jpg",
+      "assets/portfolio/new-shot-05.jpg",
+      "assets/portfolio/new-shot-06.jpg",
+      "assets/portfolio/new-style-03.jpg",
+      "assets/portfolio/new-style-04.jpg",
+      "assets/portfolio/new-style-05.jpg",
+      "assets/portfolio/new-viet-03.jpg",
+      "assets/portfolio/new-viet-04.jpg",
+      "assets/portfolio/new-viet-05.jpg",
+      "assets/portfolio/project-01.jpg",
+      "assets/portfolio/project-02.jpg",
+      "assets/portfolio/shot-03.jpg",
+      "assets/portfolio/style-01.jpg",
+      "assets/portfolio/style-02.jpg",
+      "assets/portfolio/viet-01.jpg",
+      "assets/portfolio/viet-02.jpg",
+      "assets/qr-tagalong.jpg",
+      "brand-spec.md",
+      "CleanShot-2026-07-23-at-21.57.01.png",
+      "CleanShot-2026-07-23-at-22.04.18.png",
+      "drawing-2026-07-23T10-33-06-268Z.png",
+      "drawing-2026-07-23T10-39-11-364Z.png",
+      "drawing-2026-07-23T13-25-48-486Z.png",
+      "drawing-2026-07-23T13-29-39-127Z.png",
+      "drawing-2026-07-23T13-45-43-397Z.png",
+      "drawing-2026-07-23T14-51-26-048Z.png",
+      "drawing-2026-07-23T14-55-10-699Z.png",
+      "drawing-2026-07-23T15-03-17-318Z.png",
+      "IMG_8597.jpg",
+      "tag-along-curriculum.html",
+      "tag-along-curriculum.pdf",
+      "tag-along-sprint-marketing-1.html",
+      "tag-along-sprint-marketing-1.pdf",
+      "tag-along-sprint-marketing-standalone.html",
+      "tag-along-sprint-marketing.html",
+      "tag-along-sprint-marketing.pdf",
+      "world-building-codex-v-003.pdf"
+    ],
+    "html": [
+      "tag-along-curriculum.html",
+      "tag-along-sprint-marketing-1.html",
+      "tag-along-sprint-marketing-standalone.html",
+      "tag-along-sprint-marketing.html"
+    ],
+    "css": [],
+    "scriptsAndComponents": [],
+    "assets": [
+      "assets/portfolio/comm-01.jpg",
+      "assets/portfolio/comm-02.jpg",
+      "assets/portfolio/cover-01.jpg",
+      "assets/portfolio/cover-02.jpg",
+      "assets/portfolio/cover-03.jpg",
+      "assets/portfolio/cover-04.jpg",
+      "assets/portfolio/hand-01.jpg",
+      "assets/portfolio/look-01.jpg",
+      "assets/portfolio/look-02.jpg",
+      "assets/portfolio/motion-01.jpg",
+      "assets/portfolio/motion-02.jpg",
+      "assets/portfolio/new-comm-03.jpg",
+      "assets/portfolio/new-comm-04.jpg",
+      "assets/portfolio/new-comm-05.jpg",
+      "assets/portfolio/new-hero-01.jpg",
+      "assets/portfolio/new-hero-02.jpg",
+      "assets/portfolio/new-hero-03.jpg",
+      "assets/portfolio/new-look-03.jpg",
+      "assets/portfolio/new-look-04.jpg",
+      "assets/portfolio/new-look-05.jpg",
+      "assets/portfolio/new-motion-03.jpg",
+      "assets/portfolio/new-motion-04.jpg",
+      "assets/portfolio/new-project-03.jpg",
+      "assets/portfolio/new-project-04.jpg",
+      "assets/portfolio/new-project-05.jpg",
+      "assets/portfolio/new-project-06.jpg",
+      "assets/portfolio/new-shot-04.jpg",
+      "assets/portfolio/new-shot-05.jpg",
+      "assets/portfolio/new-shot-06.jpg",
+      "assets/portfolio/new-style-03.jpg",
+      "assets/portfolio/new-style-04.jpg",
+      "assets/portfolio/new-style-05.jpg",
+      "assets/portfolio/new-viet-03.jpg",
+      "assets/portfolio/new-viet-04.jpg",
+      "assets/portfolio/new-viet-05.jpg",
+      "assets/portfolio/project-01.jpg",
+      "assets/portfolio/project-02.jpg",
+      "assets/portfolio/shot-03.jpg",
+      "assets/portfolio/style-01.jpg",
+      "assets/portfolio/style-02.jpg",
+      "assets/portfolio/viet-01.jpg",
+      "assets/portfolio/viet-02.jpg",
+      "assets/qr-tagalong.jpg",
+      "brand-spec.md",
+      "CleanShot-2026-07-23-at-21.57.01.png",
+      "CleanShot-2026-07-23-at-22.04.18.png",
+      "drawing-2026-07-23T10-33-06-268Z.png",
+      "drawing-2026-07-23T10-39-11-364Z.png",
+      "drawing-2026-07-23T13-25-48-486Z.png",
+      "drawing-2026-07-23T13-29-39-127Z.png",
+      "drawing-2026-07-23T13-45-43-397Z.png",
+      "drawing-2026-07-23T14-51-26-048Z.png",
+      "drawing-2026-07-23T14-55-10-699Z.png",
+      "drawing-2026-07-23T15-03-17-318Z.png",
+      "IMG_8597.jpg",
+      "tag-along-curriculum.pdf",
+      "tag-along-sprint-marketing-1.pdf",
+      "tag-along-sprint-marketing.pdf",
+      "world-building-codex-v-003.pdf"
+    ]
+  },
+  "screens": [
+    {
+      "file": "tag-along-curriculum.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "tag-along-sprint-marketing-1.html",
+      "role": "landing-page",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "tag-along-sprint-marketing-standalone.html",
+      "role": "landing-page",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "tag-along-sprint-marketing.html",
+      "role": "landing-page",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    }
+  ],
+  "screenFilePolicy": {
+    "mode": "screen-file-first",
+    "entryFileRole": "primary-screen",
+    "rules": [
+      "Each distinct user-facing screen or surface must be delivered and implemented as its own file/route.",
+      "If a landing page is present or requested, keep it in landing.html and do not merge it into the product app screen.",
+      "When multiple HTML screens exist, index.html is a launcher/overview only; it must not be treated as the combined final UI.",
+      "Keep product app screens, landing pages, platform screens, and OS widget surfaces separate in production code."
+    ]
+  },
+  "appModules": [
+    "Identify domain-specific in-app modules from the exported UI; do not reduce them to generic cards.",
+    "For each major module, implement purpose, default/loading/empty/error/success states, and responsive behavior.",
+    "Keep app modules separate from OS home-screen widgets in the production component model."
+  ],
+  "osWidgets": [
+    "If the export includes home-screen, lock-screen, Live Activity, tablet glance, or Android widget surfaces, implement them as platform quick-access surfaces outside the app UI.",
+    "If none are present, do not invent OS widgets unless the product requirements request them."
+  ],
+  "landingPage": {
+    "detection": "Inspect files and screen names for a marketing/landing page surface. If present, keep it separate from product app screens.",
+    "requiredSections": [
+      "hero",
+      "value props",
+      "product proof/screenshots",
+      "feature proof",
+      "CTA"
+    ]
+  },
+  "tokens": {
+    "source": [
+      "tag-along-curriculum.html"
+    ],
+    "required": [
+      "background",
+      "surface",
+      "foreground",
+      "muted text",
+      "border",
+      "accent",
+      "radius",
+      "shadow",
+      "spacing",
+      "type scale",
+      "motion"
+    ],
+    "note": "Extract/freeze tokens before framework implementation so coding tools do not substitute default theme colors or typography."
+  },
+  "interactions": {
+    "source": [
+      "tag-along-curriculum.html"
+    ],
+    "requiredStates": [
+      "default",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "loading",
+      "empty",
+      "error",
+      "success"
+    ],
+    "requiredBehaviors": [
+      "forms/validation where present",
+      "tabs/filters where present",
+      "dialogs/sheets/drawers where present",
+      "copy/generate/share actions where present",
+      "player or quick controls where present"
+    ],
+    "note": "If the prototype is static, derive missing behavior from visible controls and document it before coding."
+  },
+  "responsiveViewports": [
+    {
+      "name": "mobile-compact",
+      "width": 360,
+      "height": 800,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-standard",
+      "width": 390,
+      "height": 844,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-large",
+      "width": 430,
+      "height": 932,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "foldable-small-tablet",
+      "width": 600,
+      "height": 960,
+      "category": "foldable-tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 820,
+      "height": 1180,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "laptop",
+      "width": 1366,
+      "height": 768,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "wide",
+      "width": 1920,
+      "height": 1080,
+      "category": "wide",
+      "mustAvoidHorizontalScroll": true
+    }
+  ],
+  "implementationChecklist": [
+    "Open entryFile first and map screens, modules, tokens, and interactions.",
+    "Extract tokens before writing framework components.",
+    "Implement app-specific modules with real states instead of generic card grids.",
+    "Preserve or rebuild JS interactions for meaningful UX actions.",
+    "Validate screenshots at desktop/tablet/mobile viewports with no horizontal overflow.",
+    "Keep landing pages, in-app modules, and OS widgets as separate implementation surfaces."
+  ]
+}
